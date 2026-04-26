@@ -69,17 +69,18 @@ export default function Home() {
     {/* 📈 Big + responsive scaling + brightness fix */}
     <div
       className="
-        origin-top transition-transform duration-500
+        relative origin-top transition-transform duration-500
         scale-[0.6] sm:scale-[0.7] md:scale-[0.9] lg:scale-[1.1] xl:scale-[1.2]
         translate-y-2
         brightness-110 contrast-105
       "
     >
-
-      <MacbookScroll src="/dashboard.png" showGradient />
+      <MacbookScroll src="/dashboard.png" />
+      
+      {/* 🌑 Integrated Fade - Scales perfectly with the MacBook */}
+      <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black via-black/95 via-black/80 via-black/40 to-transparent z-50 pointer-events-none" />
     </div>
-    <div className="absolute bottom-0 left-0 w-full h-56 sm:h-85 md:h-96 bg-gradient-to-t from-black via-black/80 via-black/50 via-black/20 to-transparent z-20" /> 
-    </div>
+  </div>
 </AnimationContainer>
 </section>
     </section>
