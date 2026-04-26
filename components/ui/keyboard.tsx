@@ -247,7 +247,7 @@ interface KeyboardContextType {
 
 const KeyboardContext = createContext<KeyboardContextType | null>(null);
 
-const useKeyboardSound = () => {
+export const useKeyboardSound = () => {
   const context = useContext(KeyboardContext);
   if (!context) {
     throw new Error("useKeyboardSound must be used within KeyboardProvider");
@@ -255,7 +255,7 @@ const useKeyboardSound = () => {
   return context;
 };
 
-const KeyboardProvider = ({
+export const KeyboardProvider = ({
   children,
   enableSound = false,
   containerRef,

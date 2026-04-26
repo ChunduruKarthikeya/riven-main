@@ -16,8 +16,8 @@ export type NavLink = {
 export const NAV_LINKS: NavLink[] = [
   
   {
-    title: "Skill Up",
-    href: "/skill-up",
+    title: "Resources",
+    href: "/resources",
   },
   {
     title: "Typing Practice",
@@ -25,8 +25,8 @@ export const NAV_LINKS: NavLink[] = [
   },
   
   {
-    title: "Resources",
-    href: "/resources",
+    title: "Skillup",
+    href: "/skill-up",
   },
   {
     title: " Tech Blogs",
