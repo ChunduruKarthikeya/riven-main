@@ -9,6 +9,20 @@ import { Logo } from '@/components/logo'
 
 const changelogEntries = [
   {
+    date: "May 20, 2026",
+    version: "v1.2.0",
+    title: "Riven AI",
+    changes: [
+      {
+        "type": "AI Career Assistant & Typing Practice",
+        "description": "We're excited to launch our AI Career Assistant and Typing Practice features, bringing enhanced guidance and skill-building to our platform."
+      }
+    ]
+  },
+  
+  
+  
+    {
     date: "April 25, 2026",
     version: "v1.1.0",
     title: "Brand Evolution & UI Enhancements",

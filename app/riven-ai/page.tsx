@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useCallback, useTransition, useState } from "react";
-import { Plus, Mic, AudioLines, Image as ImageIcon, SquarePen, ArrowUp, PanelRightClose, PanelRightOpen, Search, ChevronDown, FolderInput, FolderClosed, Settings, X, Lightbulb, SmilePlus, SquareTerminal, History, MessageCircle, MoreHorizontal, Share, UserPlus, Pencil, Folder, ChevronRight, Pin, Archive, Trash2, FileUp, Figma, MonitorIcon, CircleUserRound, ArrowUpIcon, Paperclip, PlusIcon, SendIcon, XIcon, LoaderIcon, Sparkles, Command } from "lucide-react";
+import { Plus, Mic, AudioLines, Image as ImageIcon, SquarePen, ArrowUp, PanelRightClose, PanelRightOpen, Search, ChevronDown, FolderInput, FolderClosed, Settings, X, Lightbulb, SmilePlus, SquareTerminal, History, MessageCircle, MoreHorizontal, Share, UserPlus, Pencil, Folder, ChevronRight, Pin, Archive, Trash2, FileUp, Figma, MonitorIcon, CircleUserRound, ArrowUpIcon, Paperclip, PlusIcon, SendIcon, XIcon, LoaderIcon, Sparkles, Command, Home } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardAction } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,6 +8,9 @@ import { Separator } from "@/components/ui/separator";
 import { motion, AnimatePresence, Reorder } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { toast } from "sonner";
+
 
 interface UseAutoResizeTextareaProps {
     minHeight: number;
@@ -126,6 +129,20 @@ const RivenAI = () => {
             if (next.has(name)) next.delete(name);
             else next.add(name);
             return next;
+        });
+    };
+
+    const handleDemoClick = (e?: React.MouseEvent) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        toast("Riven Ai is under development", {
+            description: "Working on flask and API Integration",
+            action: {
+                label: "Undo",
+                onClick: () => console.log("Undo"),
+            },
         });
     };
 
@@ -292,8 +309,25 @@ const RivenAI = () => {
 
           <nav id="sidebar-nav" className="flex-1 overflow-y-auto custom-scrollbar [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20 pb-8">
             <Button
+              asChild
+              className="group flex items-center justify-between w-[90%] mx-auto mt-4 px-3 py-2 rounded-full bg-transparent hover:bg-white/10 transition-all text-sm text-gray-300 border border-transparent hover:border-white/5 cursor-pointer"
+            >
+              <Link href="/">
+                <div className="flex min-w-0 items-center gap-1.5 w-full">
+                  <div className="flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
+                    <Home className="h-4 w-4" />
+                  </div>
+                  <div className="flex min-w-0 grow items-center gap-2.5">
+                    <div className="truncate text-[13px]">Return Home</div>
+                  </div>
+                </div>
+              </Link>
+            </Button>
+
+            <Button
+              onClick={handleDemoClick}
               tabIndex={0}
-              className="group flex items-center justify-between w-[90%] mx-auto mt-4 px-3 py-2 rounded-full bg-transparent hover:bg-white/10 transition-all text-sm text-gray-300 border border-transparent hover:border-white/5"
+              className="group flex items-center justify-between w-[90%] mx-auto mt-4 px-3 py-2 rounded-full bg-transparent hover:bg-white/10 transition-all text-sm text-gray-300 border border-transparent hover:border-white/5 cursor-pointer"
             >
             <div className="flex min-w-0 items-center gap-1.5">
               <div className="flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
@@ -321,8 +355,9 @@ const RivenAI = () => {
           </Button>
 
           <Button
+            onClick={handleDemoClick}
             tabIndex={0}
-            className="group flex items-center justify-between w-[90%] mx-2 mt-4 px-3 py-2 rounded-full bg-transparent hover:bg-white/10 transition-all text-sm text-gray-300 border border-transparent hover:border-white/5"
+            className="group flex items-center justify-between w-[90%] mx-2 mt-4 px-3 py-2 rounded-full bg-transparent hover:bg-white/10 transition-all text-sm text-gray-300 border border-transparent hover:border-white/5 cursor-pointer"
           >
             <div className="flex min-w-0 items-center gap-1.5">
               <div className="flex items-center justify-center opacity-70 group-hover:opacity-100 transition-opacity">
@@ -374,7 +409,10 @@ const RivenAI = () => {
                         <FolderClosed className="h-4 w-4 text-gray-400 group-hover:text-gray-200" />
                         <span className="text-[13px]">{project.name}</span>
                       </Button>
-                      <button className="p-1.5 opacity-0 group-hover:opacity-100 hover:bg-white/10 rounded-md transition-all">
+                      <button 
+                        onClick={handleDemoClick}
+                        className="p-1.5 opacity-0 group-hover:opacity-100 hover:bg-white/10 rounded-md transition-all cursor-pointer"
+                      >
                         <MoreHorizontal className="h-4 w-4 text-gray-500" />
                       </button>
                     </div>
@@ -382,7 +420,11 @@ const RivenAI = () => {
                     {expandedProjects.has(project.name) && project.chats && project.chats.length > 0 && (
                       <div className="pl-8 space-y-1 border-l border-white/5 ml-4">
                         {project.chats.map((chat, cIdx) => (
-                          <div key={cIdx} className="text-[12px] text-gray-500 hover:text-white py-1 cursor-pointer truncate flex items-center gap-2 group/chat">
+                          <div 
+                            key={cIdx} 
+                            onClick={handleDemoClick}
+                            className="text-[12px] text-gray-500 hover:text-white py-1 cursor-pointer truncate flex items-center gap-2 group/chat"
+                          >
                             <MessageCircle className="h-3 w-3 opacity-0 group-hover/chat:opacity-100 transition-opacity" />
                             {chat.question}
                           </div>
@@ -424,6 +466,7 @@ const RivenAI = () => {
                 >
                   <Button 
                     variant="ghost"
+                    onClick={handleDemoClick}
                     className="w-full flex items-center justify-start px-3 py-2 hover:bg-white/5 rounded-lg cursor-pointer group transition-all h-auto text-gray-300 hover:text-white border-none pr-10"
                   >
                     <span className="text-[13px] truncate">{chat.question}</span>
@@ -454,19 +497,31 @@ const RivenAI = () => {
                           left: menuPosition ? `${menuPosition.left}px` : '0px' 
                         }}
                       >
-                        <button className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors">
+                        <button 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
                           <Share className="h-4 w-4" />
                           <span>Share</span>
                         </button>
-                        <button className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors">
+                        <button 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
                           <UserPlus className="h-4 w-4" />
                           <span>Start a group chat</span>
                         </button>
-                        <button className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors">
+                        <button 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
                           <Pencil className="h-4 w-4" />
                           <span>Rename</span>
                         </button>
-                        <button className="w-full flex items-center justify-between px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors">
+                        <button 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center justify-between px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
                           <div className="flex items-center gap-3">
                             <Folder className="h-4 w-4" />
                             <span>Move to project</span>
@@ -478,11 +533,17 @@ const RivenAI = () => {
                           <Separator className="bg-white/5" />
                         </div>
 
-                        <button className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors">
+                        <button 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
                           <Pin className="h-4 w-4" />
                           <span>Pin chat</span>
                         </button>
-                        <button className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors">
+                        <button 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-200 hover:bg-white/10 transition-colors cursor-pointer"
+                        >
                           <Archive className="h-4 w-4" />
                           <span>Archive</span>
                         </button>
@@ -508,6 +569,20 @@ const RivenAI = () => {
         </div>
 
         <div className={`flex-1 transition-all duration-300 flex flex-col relative overflow-hidden ${!isSidebarOpen ? 'w-full' : ''}`}>
+          {/* Floating Return Home Button */}
+          <div className="absolute top-4 right-4 z-50">
+            <Button
+              asChild
+              variant="outline"
+              className="rounded-full border-white/10 bg-[#000000]/60 backdrop-blur-md hover:bg-white/10 hover:text-white transition-all gap-2 cursor-pointer shadow-lg"
+            >
+              <Link href="/">
+                <Home className="h-4 w-4" />
+                <span>Return Home</span>
+              </Link>
+            </Button>
+          </div>
+
           {/* Animated Background Glows */}
           <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-violet-500/5 rounded-full mix-blend-normal filter blur-[128px] animate-pulse" />
@@ -656,10 +731,15 @@ const RivenAI = () => {
           )}
 
           {/* Footer Disclaimer */}
-          <div className="mt-auto pb-8 text-xs text-center text-gray-500 max-w-2xl px-4 items-center justify-center flex  ">
-            Free Research Preview. Riven may produce inaccurate information about people, places, or facts. 
-            <a className="underline hover:text-gray-400 ml-1" href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">Riven AI Version 2026</a>
-          </div>
+          <p className="mt-auto pb-8 text-xs text-center text-gray-500 max-w-2xl px-4 mx-auto leading-relaxed">
+            Free Research Preview. Riven may produce inaccurate information about people, places, or facts.{" "}
+            <a 
+              className="underline hover:text-gray-400 ml-1 cursor-pointer whitespace-nowrap" 
+              onClick={handleDemoClick}
+            >
+              Riven AI Version 2026
+            </a>
+          </p>
         </div>
 
         {/* Delete Confirmation Modal */}
@@ -785,7 +865,10 @@ const RivenAI = () => {
             {/* Content with Scrollbar */}
             <div className="flex-1 overflow-y-auto p-2 space-y-4 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-white/20">
               {/* New Chat Button */}
-              <button className="w-full flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition-all group text-left">
+              <button 
+                onClick={handleDemoClick}
+                className="w-full flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition-all group text-left cursor-pointer"
+              >
                 <SquarePen className="h-4 w-4 text-gray-400 group-hover:text-white transition-colors" />
                 <span className="text-sm font-medium text-gray-200 group-hover:text-white">New chat</span>
               </button>
@@ -803,7 +886,11 @@ const RivenAI = () => {
                     <div key={category} className="space-y-1">
                       <h3 className="px-3 text-[12px] font-semibold text-gray-500">{category}</h3>
                       {chats.map((chat, idx) => (
-                        <button key={idx} className="w-full flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition-all group text-left">
+                        <button 
+                          key={idx} 
+                          onClick={handleDemoClick}
+                          className="w-full flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition-all group text-left cursor-pointer"
+                        >
                           <MessageCircle className="h-4 w-4 text-gray-400 group-hover:text-white transition-colors shrink-0" />
                           <span className="text-sm text-gray-200 group-hover:text-white truncate">{chat.title}</span>
                         </button>
