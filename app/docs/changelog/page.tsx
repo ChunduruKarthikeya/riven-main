@@ -10,7 +10,7 @@ import { Logo } from '@/components/logo'
 const changelogEntries = [
   {
     date: "April 25, 2026",
-    version: "v1.0.1",
+    version: "v1.1.0",
     title: "Brand Evolution & UI Enhancements",
     changes: [
       {

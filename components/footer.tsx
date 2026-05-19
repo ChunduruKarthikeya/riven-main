@@ -35,6 +35,10 @@ export default function Footer({ className }: FooterProps): React.ReactNode {
     title: "Riven-AI",
     href: "/riven-ai",
   },
+  {
+    title: "Testing Page",
+    href: "/test-site",
+  },
   ];
 
   const linksRight: FooterLink[] = [

@@ -42,7 +42,7 @@ export const MacbookScroll = ({
         rotate={rotate}
       />
       {/* Base area with metallic edge highlights */}
-      <div className="relative -z-10 -mt-2 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-gradint-to-b dark:bg-[#404046] shadow-[0_10px_50px_rgba(0,0,0,0.5),0_1px_2px_rgba(255,255,255,0.08)_inset]"> 
+      <div className="relative -z-10 -mt-2 h-[22rem] w-[32rem] overflow-hidden rounded-2xl bg-[#cfcfd1] dark:bg-[#404046] shadow-[0_10px_50px_rgba(0,0,0,0.5),0_1px_2px_rgba(255,255,255,0.08)_inset]"> 
         
         {/* Metallic Side Highlight / Border */}
         <div className="absolute inset-0 rounded-2xl pointer-events-none border border-white/10" />
@@ -51,13 +51,13 @@ export const MacbookScroll = ({
           <div className="absolute inset-x-0 mx-auto h-4 w-[80%] bg-gradient-to-b from-[#2a2a2e] via-[#1a1a1d] to-[#0d0d0f]" />
         </div>
         <div className="relative flex px-2 pt-1">
-          <div className="mx-auto h-full w-[10%] overflow-hidden opacity-50">
+          <div className="mx-auto flex w-[10%] overflow-hidden opacity-50">
             <SpeakerGrid />
           </div>
-          <div className="mx-auto h-full w-[80%]">
+          <div className="mx-auto w-[80%]">
             <Keypad />
           </div>
-          <div className="mx-auto h-full w-[10%] overflow-hidden opacity-50">
+          <div className="mx-auto flex w-[10%] overflow-hidden opacity-50">
             <SpeakerGrid />
           </div>
         </div>
@@ -93,27 +93,15 @@ export const Lid = ({
         className="
           relative h-[12rem] w-[32rem] rounded-2xl 
           bg-gradient-to-b from-[#1a1a1d] to-[#0d0d0f] 
-          p-[3px]
-
-          /* 🔥 outer glow */
+          p-[5px]
           shadow-[0_0_25px_rgba(255,255,255,0.05)]
         "
       >
-
-        {/* 🔥 FULL EDGE OUTLINE */}
-        <div className="absolute inset-0 rounded-2xl border border-white/10 pointer-events-none" />
-
-        {/* 🔥 INNER METAL GLOW */}
+        <div className="absolute inset-0 rounded-2xl border border-white/20 pointer-events-none" />
         <div className="absolute inset-0 rounded-2xl shadow-[inset_0_1px_2px_rgba(255,255,255,0.15)] pointer-events-none" />
-
-        {/* 🔥 TOP CURVE HIGHLIGHT (KEY) */}
         <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white/20 via-white/10 to-transparent rounded-t-2xl pointer-events-none" />
-
-        {/* 🔲 INNER BODY */}
         <div className="relative h-full w-full rounded-xl bg-[#050505] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_10px_40px_rgba(0,0,0,0.8)]">
-          
-          {/* 📺 SCREEN BEZEL */}
-          <div className="absolute inset-[6px] rounded-lg overflow-hidden border border-white/10 bg-black">
+          <div className="absolute inset-[10px] rounded-lg overflow-hidden border border-white/20 bg-black">
 
             {/* 🖥 SCREEN CONTENT */}
             {src ? (
@@ -160,11 +148,11 @@ export const Trackpad = () => {
 export const SpeakerGrid = () => {
   return (
     <div
-      className="mt-2 flex h-full gap-[2px] px-[0.5px]"
+      className="mt-2 flex-1 w-full"
       style={{
         backgroundImage: `
-          radial-gradient(circle, rgba(30,30,32,0.9) 0.5px, transparent 0.5px),
-          radial-gradient(circle, rgba(20,20,22,0.9) 0.5px, transparent 0.5px)
+          radial-gradient(circle, rgba(0, 0, 0, 0.8) 0.5px, transparent 0.5px),
+          radial-gradient(circle, rgba(0, 0, 0, 0.8) 0.5px, transparent 0.5px)
         `,
         backgroundSize: "2.5px 2.5px",
         backgroundPosition: "0 0, 1.25px 1.25px",

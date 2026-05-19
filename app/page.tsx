@@ -61,7 +61,7 @@ export default function Home() {
         
   
   {/* 🌑 Background fade overlay - Intensified */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/60 to-black pointer-events-none z-10" />
+  <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black pointer-events-none z-10" />
 
   {/* 💻 MacBook Container */}
   <div className="relative w-full max-w-[2000px] flex flex-col items-center justify-start pt-10 sm:pt-14 px-6 pb-10 sm:pb-20">
@@ -80,7 +80,7 @@ export default function Home() {
       <MacbookScroll src="/dashboard.png" showGradient />
     </div>
     {/* 🌑 Maximized bottom-up fade */}
-    <div className="absolute bottom-0 left-0 w-full h-56 sm:h-80 md:h-96 bg-gradient-to-t from-black via-black via-black/80 via-black/40 to-transparent z-20" /> 
+    <div className="absolute bottom-0 left-0 w-full h-56 sm:h-80 md:h-96 bg-gradient-to-t from-black via-black via-black/40 via-black/20 to-transparent z-20" /> 
     </div>
 </AnimationContainer>
 </section>
