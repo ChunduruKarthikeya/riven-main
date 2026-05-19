@@ -23,7 +23,7 @@ export default function LoginForm() {
                     <h1 className="font-serif text-4xl font-normal">Welcome back</h1>
                     <p className="text-muted-foreground mt-2 text-sm">Sign in with your Google Account</p>
                 </div>
-                <Card variant="outline" className="mt-6 p-8">
+                <Card className="mt-6 p-8">
                     
 
                     

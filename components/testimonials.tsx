@@ -43,7 +43,6 @@ const ReviewCard = ({
 }) => {
   return (
     <Card
-      variant="outline"
       className="flex w-full flex-col gap-3 rounded-2xl p-6 text-sm bg-card/50 backdrop-blur-sm border-border/50">
       <div className="flex flex-col justify-between h-full space-y-4">
         <p className="text-foreground text-sm md:text-base leading-relaxed break-words whitespace-pre-wrap">

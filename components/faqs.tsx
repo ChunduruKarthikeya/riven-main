@@ -45,9 +45,7 @@ export default function FAQ() {
                     <h2 className="text-balance font-serif text-4xl font-medium">Frequently Asked Questions</h2>
                     <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">Find answers to common questions about my platform.</p>
                 </div>
-                <Card
-                    variant="outline"
-                    className="mt-12 p-2">
+                <Card className="mt-12 p-2">
                     <Accordion
                         type="single"
                         collapsible>

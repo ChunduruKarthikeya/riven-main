@@ -132,7 +132,7 @@ const RivenAI = () => {
     const [chats, setChats] = useState([
         { question: "Warp landing page code" },
         { question: "SVG Icon References" },
-        { question: "Hello Karthikeya" },
+        
     ]);
 
     const handleDeleteChat = () => {
