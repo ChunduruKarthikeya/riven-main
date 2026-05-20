@@ -1,8 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Riven — AI Integrated Career Assistant
 
-## Getting Started
+Riven is a premium, high-performance web application designed to act as an AI-powered career assistant. It combines intelligent chat interfaces, mock workspace tools, resource centers, and documentation to deliver an immersive and modern assistant experience.
 
-First, run the development server:
+## 🚀 Key Features
+
+*   **Riven AI Chatbot**: A fully responsive, interactive AI assistant interface featuring message simulation (thinking states), customizable projects, drag-and-drop chat organization, and recent session history.
+*   **Typing Tutor**: Built-in interactive learning section (`learn-typing`) for enhancing professional technical skills.
+*   **Documentation Hub**: Structured changelog and guide pages under `/docs`.
+*   **Interactive Modals & Context Menus**: Actions for renaming, pinning, sharing, archiving, or moving chats between projects.
+*   **Modern Premium UI/UX**: Designed using glassmorphism, responsive sidebar layout, smooth Framer Motion transitions, custom custom-scrollbars, and Sonner toast notifications.
+
+---
+
+## 🛠️ Technology Stack
+
+*   **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/) & [Lucide Icons](https://lucide.dev/)
+*   **Notifications**: [Sonner](https://emilkowal.ski/ui/sonner)
+*   **State & Reordering**: Custom React state structures & Framer Motion `Reorder` component
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Installation
+
+First, clone the repository and install the dependencies:
+
+```bash
+npm install
+```
+
+### 2. Run the Development Server
+
+Start the Next.js development server:
 
 ```bash
 npm run dev
@@ -14,23 +47,22 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) (or the displayed port like [http://localhost:3001](http://localhost:3001) if port 3000 is occupied) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
 
-## Learn More
+```For Project Structure refer
 
-To learn more about Next.js, take a look at the following resources:
+```
+https://gitingest.com/ChunduruKarthikeya/riven-main/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deployment
 
-## Deploy on Vercel
+The easiest way to deploy Riven is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For details on self-hosting or custom next build deployments, refer to the [Next.js Deployment Documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
