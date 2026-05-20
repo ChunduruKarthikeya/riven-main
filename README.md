@@ -53,10 +53,23 @@ Open [http://localhost:3000](http://localhost:3000) (or the displayed port like 
 
 ## 📂 Project Structure
 
-```For Project Structure refer
-
+```text
+riven/
+├── app/                  # Next.js App Router pages and layouts
+│   ├── docs/             # Changelog & guide pages
+│   ├── learn-typing/     # Typing practice modules
+│   ├── resources/        # Resource hub
+│   ├── riven-ai/         # Riven AI chat workspace layout
+│   ├── sign-in/          # Authentication pages
+│   └── layout.tsx        # Global layout configuration
+├── components/           # Reusable UI & custom components
+│   ├── ui/               # Core design tokens & shadcn components
+│   └── footer/           # Layout footer components
+├── lib/                  # Helper utilities and hooks
+└── public/               # Static assets and screenshots
 ```
-https://gitingest.com/ChunduruKarthikeya/riven-main/
+
+For an interactive codebase visualizer, refer to [GitIngest](https://gitingest.com/ChunduruKarthikeya/riven-main/).
 
 ---
 
@@ -65,4 +78,3 @@ https://gitingest.com/ChunduruKarthikeya/riven-main/
 The easiest way to deploy Riven is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
 For details on self-hosting or custom next build deployments, refer to the [Next.js Deployment Documentation](https://nextjs.org/docs/app/building-your-application/deploying).
-
